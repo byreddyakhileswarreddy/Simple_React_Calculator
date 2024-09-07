@@ -1,0 +1,112 @@
+/* Full-page animated gradient background with dots */
+body {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px), 
+              radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px;
+  background-color: #1e3c72; /* Fallback solid background color */
+  background-image: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #6dd5fa 100%);
+  background-blend-mode: overlay;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+/* Wider calculator container with smooth shadow and gradient */
+.calculator-body {
+  max-width: 600px; /* Increased width for a wider calculator */
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 8px 32px rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  animation: slideIn 1.5s ease forwards;
+}
+
+/* Slide-in animation for calculator container */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styling for the result display with an increased width */
+.result {
+  height: 80px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  border-radius: 12px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 36px;
+  color: #fff;
+  box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Button grid with adjusted gap for wider layout */
+.button {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px; /* Increased gap between buttons */
+}
+
+/* Individual button with increased width and 3D hover effect */
+button {
+  width: 100%;
+  height: 80px; /* Increased height for larger buttons */
+  font-size: 26px; /* Increased font size for larger buttons */
+  background: linear-gradient(145deg, #76c7c0, #66a6ff);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(145deg, #66a6ff, #76c7c0);
+}
+
+/* Button active (click) effect */
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Typography improvements for the button */
+button span {
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Result text styling */
+.result p {
+  font-size: 40px;
+  font-family: 'Roboto Mono', monospace;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  margin: 0;
+}
+
+/* Extra space for larger screens */
+@media (min-width: 768px) {
+  .calculator-body {
+    margin-top: 100px;
+  }
+}
